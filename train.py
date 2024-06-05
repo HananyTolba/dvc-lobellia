@@ -15,10 +15,10 @@ def train_model():
 
     # Train model
     model = RandomForestClassifier()
-    model.fit(X_train, y_train)
+    # model.fit(X_train, y_train)
 
     # Save model
-    joblib.dump(model, '/data/model.joblib')
+    joblib.dump(model, 'data/model.joblib')
 
 if __name__ == "__main__":
     train_model()

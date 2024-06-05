@@ -1,0 +1,60 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python3 prepare.py
+    deps:
+    - path: data/customers-100000.txt
+      hash: md5
+      md5: 69b8eb939bd15f14a7553c62ab7e09ac
+      size: 17317579
+    - path: prepare.py
+      hash: md5
+      md5: 2d40a508839871b810c6af3780558248
+      size: 277
+    outs:
+    - path: data/prepared_data.csv
+      hash: md5
+      md5: 2c1fd8bc0bfb3a3ca2140895749eca83
+      size: 17217578
+  train:
+    cmd: python3 train.py
+    deps:
+    - path: data/prepared_data.csv
+      hash: md5
+      md5: 2c1fd8bc0bfb3a3ca2140895749eca83
+      size: 17217578
+    - path: train.py
+      hash: md5
+      md5: cf956f410e2bbbf3dc7586da610c05b1
+      size: 651
+    outs:
+    - path: data/model.joblib
+      hash: md5
+      md5: cdfa46cbd2766a784327ea0a98a8c6b0
+      size: 657
+  validate:
+    cmd: python3 validate.py
+    deps:
+    - path: data/model.joblib
+      hash: md5
+      md5: cdfa46cbd2766a784327ea0a98a8c6b0
+      size: 657
+    - path: data/test_data.csv
+      hash: md5
+      md5: 845060fc23ba0e167fbcd08ce7c52c85
+      size: 3329005
+    - path: validate.py
+      hash: md5
+      md5: dc566c4c542a6cc4e54b020cc731a8c2
+      size: 463
+  deploy:
+    cmd: python3 deploy.py
+    deps:
+    - path: data/model.joblib
+      hash: md5
+      md5: cdfa46cbd2766a784327ea0a98a8c6b0
+      size: 657
+    - path: deploy.py
+      hash: md5
+      md5: cce2de2b8d3a55c8d912182e668089a9
+      size: 178

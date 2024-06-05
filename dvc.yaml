@@ -1,6 +1,6 @@
 stages:
   prepare:
-    cmd: python prepare.py
+    cmd: python3 prepare.py
     deps:
       - data/customers-100000.txt
       - prepare.py
@@ -8,7 +8,7 @@ stages:
       - data/prepared_data.csv
 
   train:
-    cmd: python train.py
+    cmd: python3 train.py
     deps:
       - data/prepared_data.csv
       - train.py
@@ -16,14 +16,14 @@ stages:
       - data/model.joblib
 
   validate:
-    cmd: python validate.py
+    cmd: python3 validate.py
     deps:
       - data/test_data.csv
       - data/model.joblib
       - validate.py
 
   deploy:
-    cmd: python deploy.py
+    cmd: python3 deploy.py
     deps:
       - data/model.joblib
       - deploy.py
