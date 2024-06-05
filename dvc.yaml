@@ -1,0 +1,29 @@
+stages:
+  prepare:
+    cmd: python prepare.py
+    deps:
+      - data/customers-100000.txt
+      - prepare.py
+    outs:
+      - data/prepared_data.csv
+
+  train:
+    cmd: python train.py
+    deps:
+      - data/prepared_data.csv
+      - train.py
+    outs:
+      - model.joblib
+
+  validate:
+    cmd: python validate.py
+    deps:
+      - data/test_data.csv
+      - model.joblib
+      - validate.py
+
+  deploy:
+    cmd: python deploy.py
+    deps:
+      - model.joblib
+      - deploy.py
