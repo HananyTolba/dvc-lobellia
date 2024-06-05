@@ -3,4 +3,4 @@
 ['remote "storage"']
     url = gdrive://1t5ypUjUkbJjlOnjHEvAT6E1tEg4lwnbh
 ['remote "webhdfs_remote"']
-    url = webhdfs://s095-3950.ccomptes.fr:9870/user/hanany/dvc-remote
+    url = webhdfs://hanany@s095-3950.ccomptes.fr:9870/user/hanany/dvc-remote
