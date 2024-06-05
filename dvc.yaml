@@ -13,7 +13,7 @@ stages:
       - data/prepared_data.csv
       - train.py
     outs:
-      - model.joblib
+      - data/model.joblib
 
   validate:
     cmd: python validate.py
