@@ -1,0 +1,6 @@
+outs:
+- md5: 69b8eb939bd15f14a7553c62ab7e09ac
+  size: 17317579
+  isexec: true
+  hash: md5
+  path: customers-100000.txt
