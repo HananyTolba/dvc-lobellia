@@ -19,11 +19,11 @@ stages:
     cmd: python validate.py
     deps:
       - data/test_data.csv
-      - model.joblib
+      - data/model.joblib
       - validate.py
 
   deploy:
     cmd: python deploy.py
     deps:
-      - model.joblib
+      - data/model.joblib
       - deploy.py

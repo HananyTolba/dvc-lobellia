@@ -2,7 +2,7 @@ import joblib
 
 def deploy_model():
     # Load model
-    model = joblib.load('model.joblib')
+    model = joblib.load('/data/model.joblib')
 
     # Deployment steps
     # ...

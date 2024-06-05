@@ -7,7 +7,7 @@ def validate_model():
     X_test = pd.read_csv('data/test_data.csv')
 
     # Load model
-    model = joblib.load('model.joblib')
+    model = joblib.load('/data/model.joblib')
 
     # Predict
     predictions = model.predict(X_test)
